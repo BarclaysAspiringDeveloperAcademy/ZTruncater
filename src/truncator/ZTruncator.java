@@ -2,10 +2,14 @@ package truncator;
 
 public class ZTruncator {
 
-	public String truncateZInFirstTwoPositions(String s) throws NullPointerException{
+	public String truncateZInFirstTwoPositions(String s) throws NullPointerException, IllegalArgumentException{
 		
+		if (s == null)  {
+			throw new NullPointerException("String cannot be null.");
+		}
+
 		if (s.length() == 0)  {
-			throw new NullPointerException();
+			throw new IllegalArgumentException("String cannot be empty");
 		}
 		
 		if (s.length() <=2)  {
@@ -18,5 +22,4 @@ public class ZTruncator {
 
 		return(truncatedString + withoutFirstTwoChars);
 	}
-
 }
